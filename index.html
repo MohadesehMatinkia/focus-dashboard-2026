@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تسک منیجر هوشمند نسخه ۲۰۲۶">
+    <title>داشبورد تمرکز | Focus Dashboard</title>
+    
+    <!-- لینک آیکون‌ها (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- فایل استایل اصلی -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- انیمیشن‌های پس‌زمینه (نورهای رنگی و ستاره‌ها) -->
+    <div class="background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="stars"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            
+            <!-- هدر اصلی (اصلاح شده و مرتب) -->
+            <header class="app-header">
+                <div class="title-section">
+                    <h1>داشبورد تمرکز</h1>
+                    <p id="greeting">سلام، آماده‌ای بترکونی؟ 🚀</p>
+                </div>
+                
+                <!-- آیکون‌ها (کنار هم و مرتب) -->
+                <div class="header-controls">
+                    <!-- دکمه تغییر تم (شب/روز) -->
+                    <button id="theme-btn" onclick="toggleTheme()" class="control-btn theme-toggler" title="تغییر پوسته">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    
+                    <!-- لوگوی برند -->
+                    <div class="control-btn logo-brand">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- باکس سخن بزرگان (Dynamic Quote) -->
+            <div id="quote-box">
+                <i class="fa-solid fa-spinner fa-spin"></i> دریافت انرژی...
+            </div>
+
+            <!-- نوار پیشرفت کارها -->
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span>پیشرفت روزانه</span>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <!-- ورودی متن + دکمه‌ها -->
+            <div class="input-group">
+                <!-- ورودی اصلی -->
+                <input type="text" id="input-box" placeholder="ماموریت بعدی چیه؟" autocomplete="off">
+                
+                <!-- دکمه میکروفون (تایپ صوتی) -->
+                <button onclick="startVoice()" class="control-btn mic-btn" title="تایپ صوتی">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+
+                <!-- دکمه افزودن (+) -->
+                <button onclick="addTask()" class="control-btn add-btn" title="اضافه کردن تسک">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+
+            <!-- تب‌های فیلتر کردن لیست -->
+            <div class="filter-tabs">
+                <span class="active" onclick="filterTasks('all')" id="tab-all">همه</span>
+                <span onclick="filterTasks('active')" id="tab-active">مانده</span>
+                <span onclick="filterTasks('completed')" id="tab-completed">تمام‌شده</span>
+            </div>
+
+            <!-- لیست تسک‌ها -->
+            <div class="tasks-wrapper">
+                <ul id="list-container">
+                    <!-- تسک‌ها اینجا اضافه می‌شوند -->
+                </ul>
+                
+                <!-- حالت خالی (وقتی تسکی نیست) -->
+                <div id="empty-state">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <p>فعلا خبری نیست، استراحت کن!</p>
+                </div>
+            </div>
+
+        </div> <!-- پایان glass-card -->
+    </main>
+    
+    <!-- کادر نوتیفیکیشن‌های شناور (Toast) -->
+    <div id="toast-box"></div>
+
+    <!-- Scripts: کتابخانه‌های لازم -->
+    <!-- 1. برای کشیدن و رها کردن آیتم‌ها -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <!-- 2. برای افکت کاغذ رنگی (جشن) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- 3. فایل جاوااسکریپت اصلی خودمان -->
+    <script src="script.js"></script>
+
+</body>
+</html>
