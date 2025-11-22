@@ -1,10 +1,6 @@
-/* =========================================
-   1. تنظیمات اصلی و فونت (بدون تغییر)
-   ========================================= */
-@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
-
-header, body, h1, p, span, input, button, .toast {
-    font-family: 'Vazirmatn', sans-serif !important;
+/* تنظیم فونت وزیر متن برای کل سایت */
+* {
+    font-family: "Vazirmatn", sans-serif !important;
 }
 
 :root {
@@ -293,3 +289,4 @@ ul li span:hover { color: var(--danger); background: rgba(244,63,94,0.1); }
 @keyframes slideInToast { 100% { transform: translateX(0); } }
 
 @keyframes float { 0% { transform: translate(0,0); } 100% { transform: translate(20px, -30px); } }
+
